@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BNCrypt | Texto Criptografado</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="" alt="BNCrypt logo" class="logo" />
+    </header>
+    <main>
+      <div class="input-area">
+        <ul class="input-area__tools">
+          <li>
+            <button class="btn-small">
+              <svg class="btn-small__icon">
+                <use xlink:href="img/sprite.svg#icon-clipboard"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="btn-small">
+              <svg class="btn-small__icon">
+                <use xlink:href="img/sprite.svg#icon-bin"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+
+        <div class="input-area__input">
+          <textarea
+            class="input-area__textarea"
+            placeholder="Digite seu texto"
+          ></textarea>
+          <div class="input-area__info">
+            <svg class="info__icon">
+              <use xlink:href="img/sprite.svg#icon-info"></use>
+            </svg>
+            <p>Apenas letras minúsculas e sem acento</p>
+          </div>
+        </div>
+
+        <div class="input-area__btn-area">
+          <button class="btn-large">
+            <svg class="btn-large__icon">
+              <use xlink:href="img/sprite.svg#icon-lock"></use>
+            </svg>
+            <p>Criptografar</p>
+          </button>
+          <button class="btn-large">
+            <svg class="btn-large__icon">
+              <use xlink:href="img/sprite.svg#icon-unlocked"></use>
+            </svg>
+            <p>Decriptografar</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="output-area">
+        <div class="output-area__result">
+          <textarea class="output-area__textarea" rows="10" cols="50" readonly>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritatis provident, inventore quas totam dicta officia! Ad ex corporis, repellendus provident, voluptatibus consectetur dolores corrupti repudiandae vel magnam atque?</textarea
+          >
+        </div>
+
+        <div class="output-area__empty">IMG</div>
+
+        <div class="output-area__btn-area">
+          <button class="btn-large">
+            <svg class="btn-large__icon">
+              <use xlink:href="img/sprite.svg#icon-copy"></use>
+            </svg>
+            <p>Copiar</p>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__info">
+        Desenvolvido por Bianca Blanco durante o programa "ONE - Oracle Next
+        Education".
+      </p>
+
+      <img src="" alt="BNCrypt Logo" class="footer__logo" />
+
+      <nav class="footer__nav">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link">
+              <svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">
+              <svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-github"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
