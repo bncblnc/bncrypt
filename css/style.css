@@ -1,0 +1,176 @@
+/* ---------------- GENERAL ----------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------- LAYOUT ----------------*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 5rem;
+  grid-column-gap: 2rem;
+}
+
+/* ---------------- HEADER ----------------*/
+.header {
+  grid-column: 1 / -1;
+  height: 12.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo {
+  height: 7rem;
+}
+
+/* ---------------- BUTTONS ----------------*/
+.btn-small {
+  padding: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-small__icon {
+  display: block;
+  height: 1.75rem;
+  width: 1.75rem;
+  fill: #fff;
+}
+
+.btn-large {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 5rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn-large__icon {
+  display: block;
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: #fff;
+  margin-right: 1rem;
+}
+
+/* ---------------- INPUT / OUTPUT AREA ----------------*/
+
+.input-area__input,
+.output-area {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.input-area__textarea,
+.output-area__textarea {
+  width: 100%;
+  height: 50vh;
+  padding: 3rem 5rem 3rem 3rem;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.input-area__textarea:focus,
+.output-area__textarea:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+/* ---------------- INPUT AREA ----------------*/
+
+.input-area__textarea::placeholder {
+  font-size: 2rem;
+  color: #333;
+}
+
+.input-area__info {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.info__icon {
+  display: block;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin-right: 0.7rem;
+}
+
+.input-area__btn-area {
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ---------------- OUTPUT AREA ----------------*/
+.output-area {
+  height: 100%;
+}
+
+.output-area__btn-area {
+  position: absolute;
+  bottom: 2rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* ---------------- FOOTER ----------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #777;
+  padding: 1rem 4rem;
+}
+
+.footer__logo {
+  height: 5rem;
+}
+
+.footer__info {
+  text-align: center;
+  width: 40rem;
+  line-height: 1.2;
+  font-size: 1.8rem;
+}
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__icon {
+  display: block;
+  height: 3.5rem;
+  width: 3.5rem;
+}
