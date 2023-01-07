@@ -8,74 +8,83 @@
     <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <img src="img/logo.png" alt="BNCrypt logo" class="header__logo" />
     </header>
+
     <main>
       <div class="grid">
-        <div class="input-area">
-          <div class="input-area__input">
-            <button class="btn-small">
-              <svg class="btn-small__icon">
-                <use xlink:href="img/sprite.svg#icon-bin"></use>
-              </svg>
-            </button>
+
+        <div class="input-area">      
+            <div class="menu__tools">
+              <ul class="tools__list">
+                <li class="tools__item">
+                  <button class="btn-small" aria-label="Criptografar">
+                      <svg class="btn-small__icon" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-lock"></use>
+                      </svg>
+                  </button>
+                </li>
+
+                <li class="tools__item">
+                  <button class="btn-small" aria-label="Decriptografar">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-unlocked"></use>
+                    </svg>
+                  </button>
+                </li>
+
+                <li class="tools__item">
+                  <button class="btn-small" aria-label="Limpar">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-bin"></use>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
             <textarea
               class="input-area__textarea"
               placeholder="Digite seu texto"
             ></textarea>
             <div class="input-area__info">
-              <svg class="info__icon">
+              <svg class="info__icon" alt="Informação">
                 <use xlink:href="img/sprite.svg#icon-info"></use>
               </svg>
               <p>Apenas letras minúsculas e sem acento</p>
             </div>
-          </div>
-
-          <div class="input-area__btn-area">
-            <button class="btn-large">
-              <svg class="btn-large__icon">
-                <use xlink:href="img/sprite.svg#icon-lock"></use>
-              </svg>
-              <p>Criptografar</p>
-            </button>
-            <button class="btn-large">
-              <svg class="btn-large__icon">
-                <use xlink:href="img/sprite.svg#icon-unlocked"></use>
-              </svg>
-              <p>Decriptografar</p>
-            </button>
-          </div>
         </div>
 
         <div class="output-area">
           <div class="output-area__empty hidden">IMG</div>
 
           <div class="output-area__result">
-            <textarea
-              class="output-area__textarea"
-              rows="10"
-              cols="50"
-              readonly
-            >
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritatis provident, inventore quas totam dicta officia! Ad ex corporis, repellendus provident, voluptatibus consectetur dolores corrupti repudiandae vel magnam atque?</textarea
-            >
-            <button class="btn-small">
-              <svg class="btn-small__icon">
-                <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
-              </svg>
-            </button>
-          </div>
+            <textarea class="output-area__textarea" readonly>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritatis provident, inventore quas totam dicta officia! Ad ex corporis, repellendus provident, voluptatibus consectetur dolores corrupti repudiandae vel magnam atque?
+            </textarea>
 
-          <div class="output-area__btn-area">
-            <button class="btn-large">
-              <svg class="btn-large__icon">
-                <use xlink:href="img/sprite.svg#icon-copy"></use>
-              </svg>
-              <p>Copiar</p>
-            </button>
-          </div>
+            <div class="menu__tools">
+              <ul class="tools__list">
+                <li class="tools__item">
+                  <button class="btn-small" aria-label="Copiar">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-copy"></use>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="output__btn-change">
+              <button class="btn-medium" aria-label="Colar resultado">
+                <svg class="btn-medium__icon" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
+                </svg>
+              </button>
+            </div>
         </div>
       </div>
     </main>

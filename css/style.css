@@ -19,19 +19,33 @@ html {
   grid-template-columns: 1fr 1fr;
   padding: 2rem 5rem;
   grid-column-gap: 2rem;
+
+  height: 70vh;
 }
 
 /* ---------------- HEADER ----------------*/
 .header {
-  grid-column: 1 / -1;
-  height: 12.7rem;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .header__logo {
-  height: 7rem;
+  height: 60%;
+}
+
+/* ---------------- TOOLS MENU ----------------*/
+.menu__tools {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+.tools__list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* ---------------- BUTTONS ----------------*/
@@ -40,11 +54,16 @@ html {
   border: none;
   border-radius: 50%;
   background-color: #000;
-  position: absolute;
-  right: 2rem;
-  top: 1rem;
   text-align: center;
   cursor: pointer;
+
+  width: 3.75rem;
+  transition: all 0.3s;
+}
+
+.btn-small:hover {
+  width: 10rem;
+  border-radius: 5rem;
 }
 
 .btn-small__icon {
@@ -54,30 +73,27 @@ html {
   fill: #fff;
 }
 
-.btn-large {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
+.btn-medium {
   background-color: #000;
   color: #fff;
-  padding: 1.5rem 5rem;
+  padding: 1rem;
   border-radius: 100px;
   cursor: pointer;
 }
 
-.btn-large__icon {
+.btn-medium__icon {
   display: block;
   height: 2.25rem;
   width: 2.25rem;
   fill: #fff;
-  margin-right: 1rem;
 }
 
 /* ---------------- INPUT / OUTPUT AREA ----------------*/
 
-.input-area__input,
+.input-area,
 .output-area {
   width: 90%;
+  height: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -85,8 +101,8 @@ html {
 .input-area__textarea,
 .output-area__textarea {
   width: 100%;
-  height: 50vh;
-  padding: 3rem 5rem 3rem 3rem;
+  height: 95%;
+  padding: 5rem 3rem 3rem 3rem;
   border: none;
   background-color: transparent;
   resize: none;
@@ -134,11 +150,16 @@ html {
   height: 100%;
 }
 
-.output-area__btn-area {
+.output-area__result {
+  position: relative;
+  height: 100%;
+}
+
+.output__btn-change {
   position: absolute;
-  bottom: 2rem;
-  right: 50%;
-  transform: translateX(50%);
+  top: 50%;
+  left: -6.75rem;
+  transform: translateY(-50%);
 }
 
 /* ---------------- FOOTER ----------------*/
@@ -149,6 +170,7 @@ html {
   align-items: center;
   background-color: #777;
   padding: 1rem 4rem;
+  height: 15vh;
 }
 
 .footer__logo {
