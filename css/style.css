@@ -7,18 +7,18 @@
 
 html {
   font-size: 62.5%;
+  font-family: sans-serif;
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 /* ---------------- LAYOUT ----------------*/
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
   padding: 2rem 5rem;
-  grid-column-gap: 2rem;
 
   height: 70vh;
 }
@@ -45,39 +45,49 @@ html {
 .tools__list {
   list-style: none;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+
+.tools__item span {
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* ---------------- BUTTONS ----------------*/
 .btn-small {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border: none;
-  border-radius: 50%;
+  border-radius: 1rem;
   background-color: #000;
-  text-align: center;
-  cursor: pointer;
 
-  width: 3.75rem;
-  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: auto;
+  overflow: hidden;
+  max-width: 4.5rem;
+
+  transition: all 0.5s;
 }
 
 .btn-small:hover {
-  width: 10rem;
-  border-radius: 5rem;
+  max-width: 300px;
 }
 
 .btn-small__icon {
   display: block;
-  height: 1.75rem;
-  width: 1.75rem;
   fill: #fff;
+  height: 2rem;
+  width: 2rem;
 }
 
 .btn-medium {
   background-color: #000;
   color: #fff;
   padding: 1rem;
-  border-radius: 100px;
+  border-radius: 1rem;
   cursor: pointer;
 }
 
@@ -86,6 +96,10 @@ html {
   height: 2.25rem;
   width: 2.25rem;
   fill: #fff;
+}
+
+.btn-medium:hover {
+  animation: input-pointer 0.7s infinite;
 }
 
 /* ---------------- INPUT / OUTPUT AREA ----------------*/
@@ -122,13 +136,20 @@ html {
 
 .input-area__textarea::placeholder {
   font-size: 2rem;
+  font-family: inherit;
   color: #333;
 }
 
 .input-area__info {
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.input-area__info:hover {
+  transform: scale(1.25);
 }
 
 .info__icon {
@@ -145,21 +166,25 @@ html {
   justify-content: space-around;
 }
 
+/* ---------------- CHANGE AREA ----------------*/
+
+.change-area {
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ---------------- OUTPUT AREA ----------------*/
 .output-area {
   height: 100%;
 }
 
-.output-area__result {
-  position: relative;
-  height: 100%;
-}
-
-.output__btn-change {
+.output-area__result,
+.output-area__empty {
   position: absolute;
-  top: 50%;
-  left: -6.75rem;
-  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
 }
 
 /* ---------------- FOOTER ----------------*/
@@ -188,11 +213,35 @@ html {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
+}
+
+.footer__item {
+  transition: all 0.2s;
+}
+
+.footer__item:hover {
+  transform: scale(1.4);
 }
 
 .footer__icon {
   display: block;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+/* ---------------- ANIMATIONS ----------------*/
+
+@keyframes input-pointer {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }

@@ -16,31 +16,39 @@
 
     <main>
       <div class="grid">
-
         <div class="input-area">      
             <div class="menu__tools">
               <ul class="tools__list">
                 <li class="tools__item">
                   <button class="btn-small" aria-label="Criptografar">
-                      <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#icon-lock"></use>
+                   <div>
+                     <svg class="btn-small__icon" aria-hidden="true">
+                       <use xlink:href="img/sprite.svg#icon-lock"></use>
                       </svg>
+                    </div>
+                    <span>Criptografar</span>
                   </button>
                 </li>
 
                 <li class="tools__item">
                   <button class="btn-small" aria-label="Decriptografar">
-                    <svg class="btn-small__icon" aria-hidden="true">
-                      <use xlink:href="img/sprite.svg#icon-unlocked"></use>
-                    </svg>
+                    <div>
+                      <svg class="btn-small__icon" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-unlocked"></use>
+                      </svg>
+                    </div>
+                      <span>Decriptografar</span>
                   </button>
                 </li>
 
                 <li class="tools__item">
                   <button class="btn-small" aria-label="Limpar">
-                    <svg class="btn-small__icon" aria-hidden="true">
-                      <use xlink:href="img/sprite.svg#icon-bin"></use>
-                    </svg>
+                    <div>
+                      <svg class="btn-small__icon" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-bin"></use>
+                      </svg>
+                    </div>
+                    <span>Limpar</span>
                   </button>
                 </li>
               </ul>
@@ -50,12 +58,21 @@
               class="input-area__textarea"
               placeholder="Digite seu texto"
             ></textarea>
+
             <div class="input-area__info">
               <svg class="info__icon" alt="Informação">
                 <use xlink:href="img/sprite.svg#icon-info"></use>
               </svg>
               <p>Apenas letras minúsculas e sem acento</p>
             </div>
+        </div>
+
+        <div class="change-area">
+          <button class="btn-medium" aria-label="Colar resultado">
+            <svg class="btn-medium__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
+            </svg>
+          </button>
         </div>
 
         <div class="output-area">
@@ -70,21 +87,18 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritati
               <ul class="tools__list">
                 <li class="tools__item">
                   <button class="btn-small" aria-label="Copiar">
-                    <svg class="btn-small__icon" aria-hidden="true">
-                      <use xlink:href="img/sprite.svg#icon-copy"></use>
-                    </svg>
+                     <div>
+                      <svg class="btn-small__icon" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-copy"></use>
+                      </svg>
+                    </div>
+                    <span>Copiar</span>
                   </button>
                 </li>
               </ul>
             </div>
 
-            <div class="output__btn-change">
-              <button class="btn-medium" aria-label="Colar resultado">
-                <svg class="btn-medium__icon" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
-                </svg>
-              </button>
-            </div>
+
         </div>
       </div>
     </main>
