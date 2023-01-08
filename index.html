@@ -5,25 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BNCrypt | Texto Criptografado</title>
+
+
     <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <header class="header">
       <img src="img/logo.png" alt="BNCrypt logo" class="header__logo" />
+      <h1 class="header__title">BNCrypt</h1>
     </header>
 
     <main>
       <div class="grid">
-        <div class="input-area">      
+        <div class="input-area"> 
+          <div class="input__border"></div>
+
             <div class="menu__tools">
               <ul class="tools__list">
                 <li class="tools__item">
                   <button class="btn-small" aria-label="Criptografar">
                    <div>
                      <svg class="btn-small__icon" aria-hidden="true">
-                       <use xlink:href="img/sprite.svg#icon-lock"></use>
+                       <use xlink:href="img/icons.svg#icon-lock"></use>
                       </svg>
                     </div>
                     <span>Criptografar</span>
@@ -34,7 +42,7 @@
                   <button class="btn-small" aria-label="Decriptografar">
                     <div>
                       <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#icon-unlocked"></use>
+                        <use xlink:href="img/icons.svg#icon-unlock"></use>
                       </svg>
                     </div>
                       <span>Decriptografar</span>
@@ -45,7 +53,7 @@
                   <button class="btn-small" aria-label="Limpar">
                     <div>
                       <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#icon-bin"></use>
+                        <use xlink:href="img/icons.svg#icon-trash-2"></use>
                       </svg>
                     </div>
                     <span>Limpar</span>
@@ -58,24 +66,19 @@
               class="input-area__textarea"
               placeholder="Digite seu texto"
             ></textarea>
-
-            <div class="input-area__info">
-              <svg class="info__icon" alt="Informação">
-                <use xlink:href="img/sprite.svg#icon-info"></use>
-              </svg>
-              <p>Apenas letras minúsculas e sem acento</p>
-            </div>
+          
         </div>
 
         <div class="change-area">
           <button class="btn-medium" aria-label="Colar resultado">
             <svg class="btn-medium__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
+              <use xlink:href="img/icons.svg#icon-arrow-left"></use>
             </svg>
           </button>
         </div>
 
         <div class="output-area">
+          <div class="output__border"></div>
           <div class="output-area__empty hidden">IMG</div>
 
           <div class="output-area__result">
@@ -89,7 +92,7 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritati
                   <button class="btn-small" aria-label="Copiar">
                      <div>
                       <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#icon-copy"></use>
+                        <use xlink:href="img/icons.svg#icon-copy"></use>
                       </svg>
                     </div>
                     <span>Copiar</span>
@@ -103,31 +106,37 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritati
       </div>
     </main>
 
-    <footer class="footer">
-      <img src="img/logo.png" alt="BNCrypt Logo" class="footer__logo" />
+    <footer class="footer"> 
+      <div class="footer_logo-box">
+        <img src="img/logo.png" alt="BNCrypt Logo" class="footer__logo" />
+        <p>BNCrypt</p>
+      </div>
 
-      <p class="footer__info">
-        Desenvolvido por Bianca Blanco durante o programa "ONE - Oracle Next
-        Education".
-      </p>
-
-      <nav class="footer__nav">
-        <ul class="footer__list">
-          <li class="footer__item">
-            <a href="#" class="footer__link">
-              <svg class="footer__icon">
-                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a href="#" class="footer__link">
-              <svg class="footer__icon">
-                <use xlink:href="img/sprite.svg#icon-github"></use></svg
-            ></a>
-          </li>
-        </ul>
-      </nav>
+      <div class="footer__author">
+        <p class="footer__info">
+          Desenvolvido por Bianca Blanco durante o <br>programa "ONE - Oracle Next
+          Education".
+        </p>
+        
+        <nav class="footer__nav">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="https://www.linkedin.com/in/bncblnc/" class="footer__link" target="_blank">
+                <svg class="footer__icon">
+                  <use xlink:href="img/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="https://github.com/bncblnc" class="footer__link" target="_blank">
+                <svg class="footer__icon">
+                  <use xlink:href="img/icons.svg#icon-github"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>
