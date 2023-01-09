@@ -1,8 +1,8 @@
 const inputArea = document.querySelector(".input-area");
-const inputTextarea = document.querySelector(".input-area__textarea");
-const outputTextarea = document.querySelector(".output-area__textarea");
 const outputArea = document.querySelector(".output-area");
 const changeArea = document.querySelector(".change-area");
+const inputTextarea = document.querySelector(".input-area__textarea");
+const outputTextarea = document.querySelector(".output-area__textarea");
 const btnEncrypt = document.getElementById("encrypt");
 const btnDecrypt = document.getElementById("decrypt");
 const btnClear = document.getElementById("clear");
@@ -29,7 +29,7 @@ function decrypt() {
 function clear() {
   clearInvalid();
   inputTextarea.value = "";
-  toggleResult();
+  if (!outputArea.classList.contains("no-result")) toggleResult();
   changeCopy("copy");
 }
 

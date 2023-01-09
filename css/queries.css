@@ -1,0 +1,200 @@
+/* ---------------- 1000px ----------------*/
+
+@media only screen and (max-width: 62.5em) {
+  .grid {
+    padding: 1rem;
+  }
+
+  .input-area,
+  .output-area {
+    width: 95%;
+  }
+}
+
+/* ---------------- 900px ----------------*/
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0 1fr;
+    padding: 2rem 4rem;
+  }
+
+  .btn-small {
+    max-width: 30rem;
+    background-color: var(--color-primary);
+  }
+
+  .btn-small:hover,
+  .btn-medium:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .btn-medium:hover {
+    animation: none;
+  }
+
+  .btn-small__icon,
+  .btn-medium__icon {
+    fill: var(--color-grey-light-1);
+  }
+
+  .btn-medium {
+    background-color: var(--color-primary);
+  }
+
+  .copy.btn-small,
+  .copy.btn-small:hover {
+    background-color: var(--color-green);
+  }
+
+  .change-area {
+    transform: rotate(90deg);
+    z-index: 100;
+    transition: all 0.5s;
+  }
+
+  .no-result.input-area {
+    transform: translateX(0);
+    z-index: 100;
+  }
+
+  .no-result.output-area {
+    transform: translateX(0) translateY(-100%);
+  }
+
+  .output-area {
+    width: 100%;
+    clip-path: polygon(
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      100% 0,
+      100% 5%,
+      100% 95%,
+      95% 95%,
+      95% 100%,
+      5% 100%,
+      0 100%,
+      0% 95%
+    );
+  }
+
+  .output__border {
+    clip-path: polygon(
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      100% 0,
+      100% 5%,
+      100% 95%,
+      95% 95%,
+      95% 100%,
+      5% 100%,
+      0 100%,
+      0% 95%
+    );
+  }
+
+  .input-area {
+    width: 100%;
+    clip-path: polygon(
+      0% 5%,
+      5% 5%,
+      5% 0%,
+      95% 0%,
+      100% 0,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      0% 100%,
+      0 100%,
+      0% 100%
+    );
+  }
+
+  .input__border {
+    clip-path: polygon(
+      0% 5%,
+      5% 5%,
+      5% 0%,
+      95% 0%,
+      100% 0,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      0% 100%,
+      0 100%,
+      0% 100%
+    );
+  }
+
+  .footer__author {
+    gap: 1.5rem;
+  }
+
+  .footer__info {
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ---------------- 650px ----------------*/
+
+@media only screen and (max-width: 40.62em) {
+  .btn-small,
+  .btn-small:hover {
+    max-width: 4.5rem;
+  }
+
+  .btn-medium {
+    padding: 0.5rem;
+  }
+
+  .btn-medium__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .input-area__textarea,
+  .output-area__textarea {
+    padding: 5.2rem 2rem 2rem 2rem;
+  }
+}
+
+/* ---------------- 470px ----------------*/
+
+@media only screen and (max-width: 29.38em) {
+  html {
+    font-size: 50%;
+  }
+
+  .grid {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    height: 10vh;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: 15vh;
+  }
+
+  .footer__logo {
+    height: 3.5rem;
+  }
+
+  .footer__info {
+    font-size: 1rem;
+  }
+}

@@ -1,17 +1,18 @@
 /* ---------------- VARIABLES ----------------*/
 :root {
   --color-primary: #1971c2;
-  --color-primary-light: #d1e3f3;
   --color-primary-dark: #1864ab;
 
   --color-grey-light-1: #f8f9fa;
   --color-grey-light-2: #f1f3f5;
-  --color-grey-light-3: #dee2e6;
+  --color-grey-light-3: #adb5bd;
 
-  --color-grey-dark-1: #adb5bd;
-  --color-grey-dark-2: #868e96;
-  --color-grey-dark-3: #495057;
-  --color-grey-dark-4: #212529;
+  --color-grey-dark-1: #868e96;
+  --color-grey-dark-2: #495057;
+  --color-grey-dark-3: #212529;
+
+  --color-red: #ff0000;
+  --color-green: #37b24d;
 }
 
 /* ---------------- GENERAL ----------------*/
@@ -124,9 +125,9 @@ body {
 }
 
 .copy {
-  border: 3px solid green;
+  border: 3px solid var(--color-green);
   padding: 0.5rem 1rem;
-  background-color: green;
+  background-color: var(--color-green);
   cursor: default;
 
   margin-right: 1rem;
@@ -134,7 +135,7 @@ body {
 }
 
 .copy.btn-small:hover {
-  background-color: green;
+  background-color: var(--color-green);
 }
 
 .btn-small:active,
@@ -235,7 +236,7 @@ body {
   font-size: 1.8rem;
   font-family: inherit;
   font-weight: 500;
-  color: var(--color-grey-dark-4);
+  color: var(--color-grey-dark-3);
   border-left: 0.8rem solid transparent;
   border-bottom: 0.8rem solid transparent;
 }
@@ -257,16 +258,16 @@ body {
   font-size: 1.8rem;
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
-  color: var(--color-grey-dark-3);
+  color: var(--color-grey-dark-2);
 }
 
 .invalid .input-area__textarea:focus {
-  border-left: 0.8rem solid red;
-  border-bottom: 0.8rem solid red;
+  border-left: 0.8rem solid var(--color-red);
+  border-bottom: 0.8rem solid var(--color-red);
 }
 
 .invalid .input-area__textarea::placeholder {
-  color: red;
+  color: var(--color-red);
 }
 
 /* ---------------- CHANGE AREA ----------------*/
@@ -297,8 +298,8 @@ body {
   justify-content: space-around;
   background-image: linear-gradient(
     to bottom,
-    var(--color-grey-dark-3),
-    var(--color-grey-dark-4)
+    var(--color-grey-dark-2),
+    var(--color-grey-dark-3)
   );
   padding: 1rem 0;
   height: 10vh;
@@ -312,7 +313,7 @@ body {
 
 .footer_logo-box p {
   font-size: 2.5rem;
-  color: var(--color-grey-dark-2);
+  color: var(--color-grey-dark-1);
 }
 
 .footer__logo {
@@ -327,10 +328,10 @@ body {
 
 .footer__info {
   text-align: center;
-  color: var(--color-grey-dark-1);
+  color: var(--color-grey-light-3);
   line-height: 1.2;
   font-size: 1.3rem;
-  border-right: 2px solid var(--color-grey-dark-1);
+  border-right: 2px solid var(--color-grey-light-3);
   padding-right: 3rem;
 }
 
@@ -357,7 +358,7 @@ body {
   display: block;
   height: 3rem;
   width: 3rem;
-  fill: var(--color-grey-dark-2);
+  fill: var(--color-grey-dark-1);
 }
 
 /* ---------------- ANIMATIONS ----------------*/
