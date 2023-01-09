@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BNCrypt | Texto Criptografado</title>
 
-
     <link rel="shortcut icon" href="img/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
   </head>
@@ -23,54 +25,61 @@
 
     <main>
       <div class="grid">
-        <div class="input-area"> 
+        <div class="input-area no-result">
           <div class="input__border"></div>
 
-            <div class="menu__tools">
-              <ul class="tools__list">
-                <li class="tools__item">
-                  <button class="btn-small" aria-label="Criptografar" id="encrypt">
-                   <div class="btn-small__content">
-                     <svg class="btn-small__icon" aria-hidden="true">
-                       <use xlink:href="img/icons.svg#icon-lock"></use>
-                      </svg>
-                      <span>Criptografar</span>
-                    </div>
-                  </button>
-                </li>
+          <div class="menu__tools">
+            <ul class="tools__list">
+              <li class="tools__item">
+                <button
+                  class="btn-small"
+                  aria-label="Criptografar"
+                  id="encrypt"
+                >
+                  <div class="btn-small__content">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/icons.svg#icon-lock"></use>
+                    </svg>
+                    <span>Criptografar</span>
+                  </div>
+                </button>
+              </li>
 
-                <li class="tools__item">
-                  <button class="btn-small" aria-label="Decriptografar" id="decrypt">
-                    <div class="btn-small__content">
-                      <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/icons.svg#icon-unlock"></use>
-                      </svg>
-                      <span>Descriptografar</span>
-                    </div>
-                  </button>
-                </li>
+              <li class="tools__item">
+                <button
+                  class="btn-small"
+                  aria-label="Decriptografar"
+                  id="decrypt"
+                >
+                  <div class="btn-small__content">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/icons.svg#icon-unlock"></use>
+                    </svg>
+                    <span>Descriptografar</span>
+                  </div>
+                </button>
+              </li>
 
-                <li class="tools__item">
-                  <button class="btn-small" aria-label="Limpar" id="clear">
-                    <div class="btn-small__content">
-                      <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/icons.svg#icon-trash-2"></use>
-                      </svg>
-                      <span>Limpar</span>
-                    </div>
-                  </button>
-                </li>
-              </ul>
-            </div>
+              <li class="tools__item">
+                <button class="btn-small" aria-label="Limpar" id="clear">
+                  <div class="btn-small__content">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/icons.svg#icon-trash-2"></use>
+                    </svg>
+                    <span>Limpar</span>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
 
-            <textarea
-              class="input-area__textarea"
-              placeholder="Digite seu texto"
-            ></textarea>
-          
+          <textarea
+            class="input-area__textarea"
+            placeholder="Digite seu texto"
+          ></textarea>
         </div>
 
-        <div class="change-area">
+        <div class="change-area no-result">
           <button class="btn-medium" aria-label="Colar resultado" id="change">
             <svg class="btn-medium__icon" aria-hidden="true">
               <use xlink:href="img/icons.svg#icon-arrow-left"></use>
@@ -78,66 +87,73 @@
           </button>
         </div>
 
-        <div class="output-area">
+        <div class="output-area no-result">
           <div class="output__border"></div>
-          <div class="output-area__empty hidden">IMG</div>
+          <textarea class="output-area__textarea" readonly></textarea>
 
-          <div class="output-area__result">
-            <textarea class="output-area__textarea no-selection" readonly></textarea>
-
-            <div class="menu__tools">
-              <ul class="tools__list">
-                <li class="tools__item">
-                  <button class="btn-small" aria-label="Copiar" id="copy">
-                     <div class="btn-small__content">
-                      <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/icons.svg#icon-copy"></use>
-                      </svg>                      
-                      <span>Copiar</span>
-                    </div>
-                   </button>
-                </li>
-                <li class="tools__item">
-                  <button class="btn-small copy" aria-label="Copiado" disabled>
-                     <div class="btn-small__content">
-                      <svg class="btn-small__icon" aria-hidden="true">
-                        <use xlink:href="img/icons.svg#icon-check"></use>
-                      </svg>                      
-                      <span>Copiado</span>
-                    </div>
-                   </button>
-                </li>
-              </ul>
-            </div>
-
-
+          <div class="menu__tools">
+            <ul class="tools__list">
+              <li class="tools__item">
+                <button class="btn-small" aria-label="Copiar" id="copy">
+                  <div class="btn-small__content">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/icons.svg#icon-copy"></use>
+                    </svg>
+                    <span>Copiar</span>
+                  </div>
+                </button>
+              </li>
+              <li class="tools__item">
+                <button class="btn-small copy" aria-label="Copiado" disabled>
+                  <div class="btn-small__content">
+                    <svg class="btn-small__icon" aria-hidden="true">
+                      <use xlink:href="img/icons.svg#icon-check"></use>
+                    </svg>
+                    <span>Copiado</span>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
 
-    <footer class="footer"> 
+    <footer class="footer">
       <div class="footer_logo-box">
-        <img src="img/logo-footer.png" alt="BNCrypt Logo" class="footer__logo" />
+        <img
+          src="img/logo-footer.png"
+          alt="BNCrypt Logo"
+          class="footer__logo"
+        />
         <p>BNCrypt</p>
       </div>
 
       <div class="footer__author">
         <p class="footer__info">
-          Desenvolvido por Bianca Blanco durante o <br>programa "ONE - Oracle Next
-          Education".
+          Desenvolvido por Bianca Blanco durante o <br />programa "ONE - Oracle
+          Next Education".
         </p>
-        
+
         <nav class="footer__nav">
           <ul class="footer__list">
             <li class="footer__item">
-              <a href="https://www.linkedin.com/in/bncblnc/" class="footer__link" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/bncblnc/"
+                class="footer__link"
+                target="_blank"
+              >
                 <svg class="footer__icon">
                   <use xlink:href="img/icons.svg#icon-linkedin"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__item">
-              <a href="https://github.com/bncblnc" class="footer__link" target="_blank">
+              <a
+                href="https://github.com/bncblnc"
+                class="footer__link"
+                target="_blank"
+              >
                 <svg class="footer__icon">
                   <use xlink:href="img/icons.svg#icon-github"></use>
                 </svg>

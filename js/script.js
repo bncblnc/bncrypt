@@ -1,8 +1,8 @@
 const inputArea = document.querySelector(".input-area");
 const inputTextarea = document.querySelector(".input-area__textarea");
 const outputTextarea = document.querySelector(".output-area__textarea");
-// const resultOn = document.querySelector(".output-area__result");
-// const resultOff = document.querySelector(".output-area__empty");
+const outputArea = document.querySelector(".output-area");
+const changeArea = document.querySelector(".change-area");
 const btnEncrypt = document.getElementById("encrypt");
 const btnDecrypt = document.getElementById("decrypt");
 const btnClear = document.getElementById("clear");
@@ -29,7 +29,7 @@ function decrypt() {
 function clear() {
   clearInvalid();
   inputTextarea.value = "";
-  // toggleResult();
+  toggleResult();
   changeCopy("copy");
 }
 
@@ -39,6 +39,8 @@ function copy() {
   text.setSelectionRange(0, 99999);
   document.execCommand("copy");
 
+  window.getSelection().empty();
+  outputTextarea.blur();
   changeCopy("copied");
 }
 
@@ -71,19 +73,19 @@ function changeText(method) {
 function displayResult(result) {
   outputTextarea.textContent = result;
   if (btnCopied.style.display == "flex") changeCopy("copy");
-  // if (!resultOff.classList.contains("hidden")) toggleResult();
+  if (outputArea.classList.contains("no-result")) toggleResult();
 }
 
 function changeCopy(condition) {
-  if (condition == "copied") copyBtnUpdate("relative", btnCopied, btnCopy);
-  if (condition == "copy") copyBtnUpdate("absolute", btnCopy, btnCopied);
+  if (condition == "copied") copyBtnUpdate(btnCopied, btnCopy);
+  if (condition == "copy") copyBtnUpdate(btnCopy, btnCopied);
 }
 
-// function toggleResult() {
-//   resultOff.classList.toggle("hidden");
-//   resultOn.classList.toggle("hidden");
-//   btnPasteOutput.classList.toggle("hidden")
-// }
+function toggleResult() {
+  inputArea.classList.toggle("no-result");
+  outputArea.classList.toggle("no-result");
+  changeArea.classList.toggle("no-result");
+}
 
 function checkInvalid() {
   const text = isEmpty(inputTextarea.value);
@@ -91,6 +93,7 @@ function checkInvalid() {
   if (text == "") {
     inputArea.classList.add("invalid");
     inputTextarea.value = "";
+    inputTextarea.placeholder = "*Digite seu texto";
     inputTextarea.focus();
     return false;
   } else {
@@ -101,6 +104,7 @@ function checkInvalid() {
 
 function clearInvalid() {
   inputArea.classList.remove("invalid");
+  inputTextarea.placeholder = "Digite seu texto";
 }
 
 function isEmpty(text) {
@@ -122,8 +126,7 @@ function switchChar(char, defaultText, newText) {
   }
 }
 
-function copyBtnUpdate(position, show, hide) {
-  btnCopied.style.position = position;
+function copyBtnUpdate(show, hide) {
   show.style.display = "flex";
   hide.style.display = "none";
 }
