@@ -273,10 +273,12 @@ body {
 /* ---------------- CHANGE AREA ----------------*/
 
 .no-result.change-area {
+  opacity: 0;
   visibility: hidden;
 }
 
 .change-area {
+  opacity: 1;
   height: 95%;
   display: flex;
   align-items: center;
@@ -287,7 +289,12 @@ body {
 /* ---------------- OUTPUT AREA ----------------*/
 .no-result.output-area {
   transform: translateX(-50%);
+  opacity: 0;
   visibility: hidden;
+}
+
+.output-area {
+  opacity: 1;
 }
 
 /* ---------------- FOOTER ----------------*/

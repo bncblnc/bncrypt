@@ -64,7 +64,7 @@
   }
 
   .no-result.output-area {
-    transform: translateX(0) translateY(-100%);
+    transform: translateX(0) translateY(-80%);
   }
 
   .output-area {
