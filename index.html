@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
   </head>
 
   <body>
@@ -28,35 +29,35 @@
             <div class="menu__tools">
               <ul class="tools__list">
                 <li class="tools__item">
-                  <button class="btn-small" aria-label="Criptografar">
-                   <div>
+                  <button class="btn-small" aria-label="Criptografar" id="encrypt">
+                   <div class="btn-small__content">
                      <svg class="btn-small__icon" aria-hidden="true">
                        <use xlink:href="img/icons.svg#icon-lock"></use>
                       </svg>
+                      <span>Criptografar</span>
                     </div>
-                    <span>Criptografar</span>
                   </button>
                 </li>
 
                 <li class="tools__item">
-                  <button class="btn-small" aria-label="Decriptografar">
-                    <div>
+                  <button class="btn-small" aria-label="Decriptografar" id="decrypt">
+                    <div class="btn-small__content">
                       <svg class="btn-small__icon" aria-hidden="true">
                         <use xlink:href="img/icons.svg#icon-unlock"></use>
                       </svg>
+                      <span>Descriptografar</span>
                     </div>
-                      <span>Decriptografar</span>
                   </button>
                 </li>
 
                 <li class="tools__item">
-                  <button class="btn-small" aria-label="Limpar">
-                    <div>
+                  <button class="btn-small" aria-label="Limpar" id="clear">
+                    <div class="btn-small__content">
                       <svg class="btn-small__icon" aria-hidden="true">
                         <use xlink:href="img/icons.svg#icon-trash-2"></use>
                       </svg>
+                      <span>Limpar</span>
                     </div>
-                    <span>Limpar</span>
                   </button>
                 </li>
               </ul>
@@ -70,7 +71,7 @@
         </div>
 
         <div class="change-area">
-          <button class="btn-medium" aria-label="Colar resultado">
+          <button class="btn-medium" aria-label="Colar resultado" id="change">
             <svg class="btn-medium__icon" aria-hidden="true">
               <use xlink:href="img/icons.svg#icon-arrow-left"></use>
             </svg>
@@ -82,21 +83,29 @@
           <div class="output-area__empty hidden">IMG</div>
 
           <div class="output-area__result">
-            <textarea class="output-area__textarea" readonly>
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritatis provident, inventore quas totam dicta officia! Ad ex corporis, repellendus provident, voluptatibus consectetur dolores corrupti repudiandae vel magnam atque?
-            </textarea>
+            <textarea class="output-area__textarea no-selection" readonly></textarea>
 
             <div class="menu__tools">
               <ul class="tools__list">
                 <li class="tools__item">
-                  <button class="btn-small" aria-label="Copiar">
-                     <div>
+                  <button class="btn-small" aria-label="Copiar" id="copy">
+                     <div class="btn-small__content">
                       <svg class="btn-small__icon" aria-hidden="true">
                         <use xlink:href="img/icons.svg#icon-copy"></use>
-                      </svg>
+                      </svg>                      
+                      <span>Copiar</span>
                     </div>
-                    <span>Copiar</span>
-                  </button>
+                   </button>
+                </li>
+                <li class="tools__item">
+                  <button class="btn-small copy" aria-label="Copiado" disabled>
+                     <div class="btn-small__content">
+                      <svg class="btn-small__icon" aria-hidden="true">
+                        <use xlink:href="img/icons.svg#icon-check"></use>
+                      </svg>                      
+                      <span>Copiado</span>
+                    </div>
+                   </button>
                 </li>
               </ul>
             </div>
@@ -108,7 +117,7 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde repellat veritati
 
     <footer class="footer"> 
       <div class="footer_logo-box">
-        <img src="img/logo.png" alt="BNCrypt Logo" class="footer__logo" />
+        <img src="img/logo-footer.png" alt="BNCrypt Logo" class="footer__logo" />
         <p>BNCrypt</p>
       </div>
 

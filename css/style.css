@@ -80,6 +80,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 
 .tools__item span {
@@ -94,10 +95,7 @@ body {
 .btn-small {
   padding: 0.5rem 1rem;
   background-color: var(--color-grey-light-1);
-
   display: flex;
-  align-items: center;
-  gap: 1rem;
 
   width: auto;
   overflow: hidden;
@@ -107,11 +105,16 @@ body {
 
 .btn-small,
 .btn-medium {
-  border: none;
   border: 3px solid var(--color-primary);
   border-radius: 1rem;
   cursor: pointer;
   box-shadow: 0 0.2rem 0.8rem 0 rgba(99, 99, 99, 0.2);
+}
+
+.btn-small__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btn-small:hover {
@@ -121,6 +124,21 @@ body {
 .btn-small:hover,
 .btn-medium:hover {
   background-color: var(--color-primary);
+}
+
+.copy {
+  border: 3px solid green;
+  background-color: green;
+  cursor: default;
+
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  display: none;
+}
+
+.copy.btn-small:hover {
+  background-color: green;
 }
 
 .btn-small:active,
@@ -137,6 +155,10 @@ body {
   fill: var(--color-primary);
   height: 2rem;
   width: 2rem;
+}
+
+.copy .btn-small__icon {
+  fill: var(--color-grey-light-2);
 }
 
 .btn-medium {
@@ -237,6 +259,15 @@ body {
   color: var(--color-grey-dark-3);
 }
 
+.invalid .input-area__textarea:focus {
+  border-left: 0.8rem solid red;
+  border-bottom: 0.8rem solid red;
+}
+
+.invalid .input-area__textarea::placeholder {
+  color: red;
+}
+
 /* ---------------- CHANGE AREA ----------------*/
 
 .change-area {
@@ -281,7 +312,7 @@ body {
 
 .footer_logo-box p {
   font-size: 2.5rem;
-  color: var(--color-primary);
+  color: var(--color-grey-dark-2);
 }
 
 .footer__logo {
@@ -296,10 +327,10 @@ body {
 
 .footer__info {
   text-align: center;
-  color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-1);
   line-height: 1.2;
-  font-size: 1.2rem;
-  border-right: 2px solid var(--color-grey-light-3);
+  font-size: 1.3rem;
+  border-right: 2px solid var(--color-grey-dark-1);
   padding-right: 3rem;
 }
 
