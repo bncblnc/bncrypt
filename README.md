@@ -13,7 +13,7 @@
 
 <h3>▶ Como rodar:</h3>
 <div>
-    <p>Você pode acessar <a href="#">clicando aqui</a>.</p>
+    <p>Você pode acessar <a href="https://bncblnc.github.io/bncrypt/">clicando aqui</a>.</p>
     <p>Essa é a segunda versão que fiz do projeto. A <a href="https://bncblnc.github.io/decodificador-challenge-one/">primeira versão</a> foi feita a partir de um modelo Figma disponibilizado pela Alura.</p>
 </div>
 <hr>
