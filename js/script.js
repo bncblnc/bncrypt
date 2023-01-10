@@ -18,6 +18,9 @@ btnClear.addEventListener("click", clear);
 btnCopy.addEventListener("click", copy);
 btnPasteOutput.addEventListener("click", paste);
 themeCheck.addEventListener("change", switchTheme);
+inputArea.addEventListener("keydown", function () {
+  if (inputArea.classList.contains("invalid")) clearInvalid();
+});
 
 function encrypt() {
   let result = changeText("encrypt");
