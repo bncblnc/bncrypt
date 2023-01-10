@@ -150,6 +150,33 @@
 /* ---------------- 650px ----------------*/
 
 @media only screen and (max-width: 40.62em) {
+  .theme {
+    right: 1rem;
+    top: 0.5rem;
+  }
+  .theme__button {
+    width: 4rem;
+    height: 2rem;
+    padding: 0.3rem;
+  }
+
+  .theme__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--color-grey-light-2);
+  }
+
+  .theme__button:after {
+    top: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 0.3rem;
+  }
+
+  .theme__checkbox:checked + .theme__button:after {
+    left: calc(100% - 0.3rem);
+  }
+
   .btn-small,
   .btn-small:hover {
     max-width: 4.5rem;
@@ -179,6 +206,7 @@
 
   .grid {
     padding: 2rem 1rem;
+    height: 77vh;
   }
 
   .header {
@@ -187,7 +215,7 @@
 
   .footer {
     flex-direction: column;
-    height: 15vh;
+    height: 13vh;
   }
 
   .footer__logo {
@@ -196,5 +224,13 @@
 
   .footer__info {
     font-size: 1rem;
+  }
+}
+
+/* ---------------- 300px ----------------*/
+@media only screen and (max-width: 18.75em) {
+  .header {
+    justify-content: flex-start;
+    padding-left: 2rem;
   }
 }

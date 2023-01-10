@@ -3,6 +3,8 @@ const outputArea = document.querySelector(".output-area");
 const changeArea = document.querySelector(".change-area");
 const inputTextarea = document.querySelector(".input-area__textarea");
 const outputTextarea = document.querySelector(".output-area__textarea");
+const body = document.querySelector("body");
+const themeCheck = document.querySelector(".theme__checkbox");
 const btnEncrypt = document.getElementById("encrypt");
 const btnDecrypt = document.getElementById("decrypt");
 const btnClear = document.getElementById("clear");
@@ -15,6 +17,7 @@ btnDecrypt.addEventListener("click", decrypt);
 btnClear.addEventListener("click", clear);
 btnCopy.addEventListener("click", copy);
 btnPasteOutput.addEventListener("click", paste);
+themeCheck.addEventListener("change", switchTheme);
 
 function encrypt() {
   let result = changeText("encrypt");
@@ -129,4 +132,8 @@ function switchChar(char, defaultText, newText) {
 function copyBtnUpdate(show, hide) {
   show.style.display = "flex";
   hide.style.display = "none";
+}
+
+function switchTheme() {
+  body.classList.toggle("dark-theme");
 }

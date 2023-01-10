@@ -19,6 +19,23 @@
   </head>
 
   <body>
+    <div class="theme">
+      <input
+        aria-hidden="true"
+        type="checkbox"
+        class="theme__checkbox"
+        id="theme-toggle"
+      />
+      <label aria-hidden="true" for="theme-toggle" class="theme__button">
+        <svg class="theme__icon" aria-hidden="true">
+          <use xlink:href="img/icons.svg#icon-sun"></use>
+        </svg>
+        <svg class="theme__icon" aria-hidden="true">
+          <use xlink:href="img/icons.svg#icon-moon"></use>
+        </svg>
+      </label>
+    </div>
+
     <header class="header">
       <img src="img/logo.png" alt="BNCrypt logo" class="header__logo" />
       <h1 class="header__title">BNCrypt</h1>

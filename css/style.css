@@ -7,12 +7,28 @@
   --color-grey-light-2: #f1f3f5;
   --color-grey-light-3: #adb5bd;
 
-  --color-grey-dark-1: #868e96;
+  --color-grey-dark-1: #9299a1;
   --color-grey-dark-2: #495057;
   --color-grey-dark-3: #212529;
 
   --color-red: #ff0000;
   --color-green: #37b24d;
+
+  --background-footer: linear-gradient(to bottom, #495057, #212529);
+}
+
+/* ---------------- DARK MODE ----------------*/
+
+.dark-theme {
+  --color-primary: #1c7ed6;
+  --color-primary-dark: #1971c2;
+
+  --color-grey-light-1: #0e0e0e;
+  --color-grey-light-2: #0f0f0f;
+  --color-grey-light-3: #868e96;
+
+  --color-grey-dark-2: #adb5bd;
+  --color-grey-dark-3: #c6cbd1;
 }
 
 /* ---------------- GENERAL ----------------*/
@@ -36,6 +52,8 @@ body {
   background-color: var(--color-grey-light-2);
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
+  position: relative;
+  transition: all 0.5s;
 }
 
 /* ---------------- LAYOUT ----------------*/
@@ -45,6 +63,53 @@ body {
   padding: 2rem 4rem;
 
   height: 75vh;
+}
+
+/* ---------------- SWITCH THEME ----------------*/
+.theme {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+}
+
+.theme__checkbox {
+  display: none;
+}
+
+.theme__button {
+  cursor: pointer;
+  width: 6rem;
+  height: 3rem;
+  background-color: var(--color-grey-dark-2);
+  display: flex;
+  align-items: center;
+  border-radius: 5rem;
+  justify-content: space-between;
+  position: relative;
+  padding: 0.6rem;
+}
+
+.theme__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-grey-light-2);
+}
+
+.theme__button:after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-grey-light-2);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.theme__checkbox:checked + .theme__button:after {
+  left: calc(100% - 0.6rem);
+  transform: translateX(-100%);
 }
 
 /* ---------------- HEADER ----------------*/
@@ -303,13 +368,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-grey-dark-2),
-    var(--color-grey-dark-3)
-  );
+  background-image: var(--background-footer);
   padding: 1rem 0;
   height: 10vh;
+  border-top: 1px solid var(--color-grey-dark-1);
 }
 
 .footer_logo-box {
@@ -335,10 +397,10 @@ body {
 
 .footer__info {
   text-align: center;
-  color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-1);
   line-height: 1.2;
   font-size: 1.3rem;
-  border-right: 2px solid var(--color-grey-light-3);
+  border-right: 2px solid var(--color-grey-dark-1);
   padding-right: 3rem;
 }
 
