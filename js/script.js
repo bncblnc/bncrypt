@@ -12,79 +12,65 @@ const btnCopy = document.getElementById("copy");
 const btnCopied = document.querySelector(".copy");
 const btnPasteOutput = document.getElementById("change");
 
-btnEncrypt.addEventListener("click", encrypt);
-btnDecrypt.addEventListener("click", decrypt);
+//ENCRYPTION PARAMETERS
+const originalChars = ["a", "e", "i", "o", "u"];
+const changedChars = ["ai", "enter", "imes", "ober", "ufat"];
+
+//EVENTS
+btnEncrypt.addEventListener("click", generateResult);
+btnDecrypt.addEventListener("click", generateResult);
 btnClear.addEventListener("click", clear);
 btnCopy.addEventListener("click", copy);
 btnPasteOutput.addEventListener("click", paste);
 themeCheck.addEventListener("change", switchTheme);
-inputArea.addEventListener("keydown", function () {
-  if (inputArea.classList.contains("invalid")) clearInvalid();
-});
+inputArea.addEventListener("keydown", clearInvalid);
 
-function encrypt() {
-  let result = changeText("encrypt");
-  if (result != undefined) displayResult(result);
-}
-
-function decrypt() {
-  let result = changeText("decrypt");
-  if (result != undefined) displayResult(result);
-}
-
-function clear() {
-  clearInvalid();
-  inputTextarea.value = "";
-  if (!outputArea.classList.contains("no-result")) toggleResult();
-  changeCopy("copy");
-}
-
-function copy() {
-  const text = outputTextarea;
-  text.select();
-  text.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-
-  window.getSelection().empty();
-  outputTextarea.blur();
-  changeCopy("copied");
-}
-
-function paste() {
-  inputTextarea.value = outputTextarea.value;
-}
-
-function changeText(method) {
+//ENCRYPT | DECRYPT
+function generateResult(e) {
   if (!checkInvalid()) return;
+
+  const method = e.target.closest("button").id;
   const text = inputTextarea.value
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
 
   let result;
-  let originalChars = ["a", "e", "i", "o", "u"];
-  let changedChars = ["ai", "enter", "imes", "ober", "ufat"];
 
-  if (method == "encrypt")
-    result = text.replace(/(a)|(e)|(i)|(o)|(u)/g, (char) =>
-      switchChar(char, originalChars, changedChars)
-    );
+  if (method == "encrypt");
+  result = text.replace(getRegExp(originalChars), (char) =>
+    replaceText(char, originalChars, changedChars)
+  );
+
   if (method == "decrypt")
-    result = text.replace(/(ai)|(enter)|(imes)|(ober)|(ufat)/g, (char) =>
-      switchChar(char, changedChars, originalChars)
+    result = text.replace(getRegExp(changedChars), (char) =>
+      replaceText(char, changedChars, originalChars)
     );
-  return result;
+
+  return displayResult(result);
 }
 
+function getRegExp(arr) {
+  return new RegExp(
+    arr
+      .map((char) => "(" + char + ")|")
+      .join("")
+      .slice(0, -1),
+    "g"
+  );
+}
+
+function replaceText(char, defaultText, newText) {
+  for (let i = 0; i < defaultText.length; i++) {
+    if (char === defaultText[i]) return newText[i];
+  }
+}
+
+//VIEWS
 function displayResult(result) {
   outputTextarea.textContent = result;
   if (btnCopied.style.display == "flex") changeCopy("copy");
   if (outputArea.classList.contains("no-result")) toggleResult();
-}
-
-function changeCopy(condition) {
-  if (condition == "copied") copyBtnUpdate(btnCopied, btnCopy);
-  if (condition == "copy") copyBtnUpdate(btnCopy, btnCopied);
 }
 
 function toggleResult() {
@@ -93,6 +79,16 @@ function toggleResult() {
   changeArea.classList.toggle("no-result");
 }
 
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  switchTheme();
+  themeCheck.checked = true;
+}
+
+function switchTheme() {
+  body.classList.toggle("dark-theme");
+}
+
+// INVALID
 function checkInvalid() {
   const text = isEmpty(inputTextarea.value);
 
@@ -109,6 +105,8 @@ function checkInvalid() {
 }
 
 function clearInvalid() {
+  if (!inputArea.classList.contains("invalid")) return;
+
   inputArea.classList.remove("invalid");
   inputTextarea.placeholder = "Digite seu texto";
 }
@@ -117,19 +115,29 @@ function isEmpty(text) {
   return text.replace(/\s/g, "");
 }
 
-function switchChar(char, defaultText, newText) {
-  switch (char) {
-    case defaultText[0]:
-      return newText[0];
-    case defaultText[1]:
-      return newText[1];
-    case defaultText[2]:
-      return newText[2];
-    case defaultText[3]:
-      return newText[3];
-    case defaultText[4]:
-      return newText[4];
-  }
+// CLEAR
+function clear() {
+  clearInvalid();
+  inputTextarea.value = "";
+  if (!outputArea.classList.contains("no-result")) toggleResult();
+  changeCopy("copy");
+}
+
+//COPY | PASTE
+function copy() {
+  const text = outputTextarea;
+  text.select();
+  text.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+
+  window.getSelection().empty();
+  outputTextarea.blur();
+  changeCopy("copied");
+}
+
+function changeCopy(condition) {
+  if (condition == "copied") copyBtnUpdate(btnCopied, btnCopy);
+  if (condition == "copy") copyBtnUpdate(btnCopy, btnCopied);
 }
 
 function copyBtnUpdate(show, hide) {
@@ -137,6 +145,6 @@ function copyBtnUpdate(show, hide) {
   hide.style.display = "none";
 }
 
-function switchTheme() {
-  body.classList.toggle("dark-theme");
+function paste() {
+  inputTextarea.value = outputTextarea.value;
 }
