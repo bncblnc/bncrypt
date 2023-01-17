@@ -37,12 +37,12 @@ function generateResult(e) {
 
   let result;
 
-  if (method == "encrypt");
+  if (method === "encrypt");
   result = text.replace(getRegExp(originalChars), (char) =>
     replaceText(char, originalChars, changedChars)
   );
 
-  if (method == "decrypt")
+  if (method === "decrypt")
     result = text.replace(getRegExp(changedChars), (char) =>
       replaceText(char, changedChars, originalChars)
     );
@@ -51,25 +51,19 @@ function generateResult(e) {
 }
 
 function getRegExp(arr) {
-  return new RegExp(
-    arr
-      .map((char) => "(" + char + ")|")
-      .join("")
-      .slice(0, -1),
-    "g"
-  );
+  return new RegExp(arr.map((char) => "(" + char + ")").join("|"), "g");
 }
 
 function replaceText(char, defaultText, newText) {
   for (let i = 0; i < defaultText.length; i++) {
-    if (char === defaultText[i]) return newText[i];
+    if (char == defaultText[i]) return newText[i];
   }
 }
 
 //VIEWS
 function displayResult(result) {
   outputTextarea.textContent = result;
-  if (btnCopied.style.display == "flex") changeCopy("copy");
+  if (btnCopied.style.display === "flex") changeCopy("copy");
   if (outputArea.classList.contains("no-result")) toggleResult();
 }
 
@@ -90,9 +84,7 @@ function switchTheme() {
 
 // INVALID
 function checkInvalid() {
-  const text = isEmpty(inputTextarea.value);
-
-  if (text == "") {
+  if (isEmpty(inputTextarea.value) === "") {
     inputArea.classList.add("invalid");
     inputTextarea.value = "";
     inputTextarea.placeholder = "*Digite seu texto";

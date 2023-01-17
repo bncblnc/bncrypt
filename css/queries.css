@@ -1,5 +1,4 @@
 /* ---------------- 1000px ----------------*/
-
 @media only screen and (max-width: 62.5em) {
   .grid {
     padding: 1rem;
@@ -10,9 +9,7 @@
     width: 95%;
   }
 }
-
 /* ---------------- 900px ----------------*/
-
 @media only screen and (max-width: 56.25em) {
   html {
     font-size: 56.25%;
@@ -24,7 +21,9 @@
     padding: 2rem 4rem;
   }
 
-  .btn-small {
+  .btn-small,
+  .btn-medium {
+    color: var(--color-grey-light-1);
     max-width: 30rem;
     background-color: var(--color-primary);
   }
@@ -32,24 +31,17 @@
   .btn-small:hover,
   .btn-medium:hover {
     background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
   }
 
   .btn-medium:hover {
     animation: none;
   }
 
-  .btn-small__icon,
-  .btn-medium__icon {
-    fill: var(--color-grey-light-1);
-  }
-
-  .btn-medium {
-    background-color: var(--color-primary);
-  }
-
   .copy.btn-small,
   .copy.btn-small:hover {
     background-color: var(--color-green);
+    border-color: var(--color-green);
   }
 
   .change-area {
@@ -60,31 +52,18 @@
 
   .no-result.input-area {
     transform: translateX(0);
-    z-index: 100;
   }
 
   .no-result.output-area {
     transform: translateX(0) translateY(-80%);
   }
 
-  .output-area {
+  .output-area,
+  .input-area {
     width: 100%;
-    clip-path: polygon(
-      0% 0%,
-      0% 0%,
-      0% 0%,
-      0% 0%,
-      100% 0,
-      100% 5%,
-      100% 95%,
-      95% 95%,
-      95% 100%,
-      5% 100%,
-      0 100%,
-      0% 95%
-    );
   }
 
+  .output-area,
   .output__border {
     clip-path: polygon(
       0% 0%,
@@ -102,24 +81,7 @@
     );
   }
 
-  .input-area {
-    width: 100%;
-    clip-path: polygon(
-      0% 5%,
-      5% 5%,
-      5% 0%,
-      95% 0%,
-      100% 0,
-      100% 0%,
-      100% 100%,
-      100% 100%,
-      100% 100%,
-      0% 100%,
-      0 100%,
-      0% 100%
-    );
-  }
-
+  .input-area,
   .input__border {
     clip-path: polygon(
       0% 5%,
@@ -148,7 +110,6 @@
 }
 
 /* ---------------- 650px ----------------*/
-
 @media only screen and (max-width: 40.62em) {
   .theme {
     right: 1rem;
@@ -198,7 +159,6 @@
 }
 
 /* ---------------- 470px ----------------*/
-
 @media only screen and (max-width: 29.38em) {
   html {
     font-size: 50%;
