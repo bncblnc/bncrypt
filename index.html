@@ -20,17 +20,12 @@
 
   <body>
     <div class="theme">
-      <input
-        aria-hidden="true"
-        type="checkbox"
-        class="theme__checkbox"
-        id="theme-toggle"
-      />
-      <label aria-hidden="true" for="theme-toggle" class="theme__button">
-        <svg class="theme__icon" aria-hidden="true">
+      <input type="checkbox" class="theme__checkbox" id="theme-toggle" />
+      <label for="theme-toggle" class="theme__button">
+        <svg class="theme__icon">
           <use xlink:href="img/icons.svg#icon-sun"></use>
         </svg>
-        <svg class="theme__icon" aria-hidden="true">
+        <svg class="theme__icon">
           <use xlink:href="img/icons.svg#icon-moon"></use>
         </svg>
       </label>
@@ -48,43 +43,35 @@
 
           <div class="menu__tools">
             <ul class="tools__list">
-              <li class="tools__item">
-                <button
-                  class="btn-small"
-                  aria-label="Criptografar"
-                  id="encrypt"
-                >
+              <li>
+                <button class="btn-small" id="encrypt">
                   <div class="btn-small__content">
-                    <svg class="btn-small__icon" aria-hidden="true">
+                    <svg class="btn-small__icon">
                       <use xlink:href="img/icons.svg#icon-lock"></use>
                     </svg>
-                    <span>Criptografar</span>
+                    Criptografar
                   </div>
                 </button>
               </li>
 
-              <li class="tools__item">
-                <button
-                  class="btn-small"
-                  aria-label="Decriptografar"
-                  id="decrypt"
-                >
+              <li>
+                <button class="btn-small" id="decrypt">
                   <div class="btn-small__content">
-                    <svg class="btn-small__icon" aria-hidden="true">
+                    <svg class="btn-small__icon">
                       <use xlink:href="img/icons.svg#icon-unlock"></use>
                     </svg>
-                    <span>Descriptografar</span>
+                    Descriptografar
                   </div>
                 </button>
               </li>
 
-              <li class="tools__item">
-                <button class="btn-small" aria-label="Limpar" id="clear">
+              <li>
+                <button class="btn-small" id="clear">
                   <div class="btn-small__content">
-                    <svg class="btn-small__icon" aria-hidden="true">
+                    <svg class="btn-small__icon">
                       <use xlink:href="img/icons.svg#icon-trash-2"></use>
                     </svg>
-                    <span>Limpar</span>
+                    Limpar
                   </div>
                 </button>
               </li>
@@ -98,8 +85,8 @@
         </div>
 
         <div class="change-area no-result">
-          <button class="btn-medium" aria-label="Colar resultado" id="change">
-            <svg class="btn-medium__icon" aria-hidden="true">
+          <button class="btn-medium" id="change">
+            <svg class="btn-medium__icon">
               <use xlink:href="img/icons.svg#icon-arrow-left"></use>
             </svg>
           </button>
@@ -111,23 +98,24 @@
 
           <div class="menu__tools">
             <ul class="tools__list">
-              <li class="tools__item">
-                <button class="btn-small" aria-label="Copiar" id="copy">
+              <li>
+                <button class="btn-small" id="copy">
                   <div class="btn-small__content">
-                    <svg class="btn-small__icon" aria-hidden="true">
+                    <svg class="btn-small__icon">
                       <use xlink:href="img/icons.svg#icon-copy"></use>
                     </svg>
-                    <span>Copiar</span>
+                    Copiar
                   </div>
                 </button>
               </li>
-              <li class="tools__item">
-                <button class="btn-small copy" aria-label="Copiado" disabled>
+
+              <li>
+                <button class="btn-small copy" disabled>
                   <div class="btn-small__content">
-                    <svg class="btn-small__icon" aria-hidden="true">
+                    <svg class="btn-small__icon">
                       <use xlink:href="img/icons.svg#icon-check"></use>
                     </svg>
-                    <span>Copiado</span>
+                    Copiado
                   </div>
                 </button>
               </li>
@@ -153,25 +141,18 @@
           Next Education".
         </p>
 
-        <nav class="footer__nav">
+        <nav>
           <ul class="footer__list">
             <li class="footer__item">
-              <a
-                href="https://www.linkedin.com/in/bncblnc/"
-                class="footer__link"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/bncblnc/" target="_blank">
                 <svg class="footer__icon">
                   <use xlink:href="img/icons.svg#icon-linkedin"></use>
                 </svg>
               </a>
             </li>
+
             <li class="footer__item">
-              <a
-                href="https://github.com/bncblnc"
-                class="footer__link"
-                target="_blank"
-              >
+              <a href="https://github.com/bncblnc" target="_blank">
                 <svg class="footer__icon">
                   <use xlink:href="img/icons.svg#icon-github"></use>
                 </svg>
