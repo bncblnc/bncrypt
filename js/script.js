@@ -13,8 +13,13 @@ const btnCopied = document.querySelector(".copy");
 const btnPasteOutput = document.getElementById("change");
 
 //ENCRYPTION PARAMETERS
-const originalChars = ["a", "e", "i", "o", "u"];
-const changedChars = ["ai", "enter", "imes", "ober", "ufat"];
+const parameters = {
+  a: "ai",
+  e: "enter",
+  i: "imes",
+  o: "ober",
+  u: "ufat",
+};
 
 //EVENTS
 btnEncrypt.addEventListener("click", generateResult);
@@ -38,26 +43,21 @@ function generateResult(e) {
   let result;
 
   if (method === "encrypt");
-  result = text.replace(getRegExp(originalChars), (char) =>
-    replaceText(char, originalChars, changedChars)
+  result = text.replace(
+    getRegExp(Object.keys(parameters)),
+    (char) => parameters[char]
   );
 
   if (method === "decrypt")
-    result = text.replace(getRegExp(changedChars), (char) =>
-      replaceText(char, changedChars, originalChars)
+    result = text.replace(getRegExp(Object.values(parameters)), (char) =>
+      Object.keys(parameters).find((key) => parameters[key] == char)
     );
 
-  return displayResult(result);
+  displayResult(result);
 }
 
 function getRegExp(arr) {
   return new RegExp(arr.map((char) => "(" + char + ")").join("|"), "g");
-}
-
-function replaceText(char, defaultText, newText) {
-  for (let i = 0; i < defaultText.length; i++) {
-    if (char == defaultText[i]) return newText[i];
-  }
 }
 
 //VIEWS
