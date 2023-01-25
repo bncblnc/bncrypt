@@ -57,7 +57,7 @@ function generateResult(e) {
 }
 
 function getRegExp(arr) {
-  return new RegExp(arr.map((char) => "(" + char + ")").join("|"), "g");
+  return new RegExp(arr.join("|"), "g");
 }
 
 //VIEWS
